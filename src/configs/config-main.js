@@ -11,3 +11,9 @@ export const EOSConfig = {
   defaultPrivateKey: 'asdfasdfasfasdfasdf',
   signatureProvider: ''
 }
+
+export const dummyJobs = [
+  { title: 'Create New Logo' },
+  { title: 'Job 2' },
+  { title: 'Job 3' }
+]
