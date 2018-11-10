@@ -1,9 +1,9 @@
 /* Main app configs go here */
 
 export const appConfig = {
-  name: 'Your EOS React Dapp Name',
-  shortName: 'YourEOSReactDapp',
-  description: 'An expert foundational React boilerplate for EOS Dapps',
+  name: 'Track Record',
+  shortName: 'TrackRecord',
+  description: 'Build your immutable reputation on blockchain, and get the jobs you want fast',
   splashScreenBackground: '#ffffff'
 }
 
