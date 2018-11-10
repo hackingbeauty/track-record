@@ -1,2 +1,3 @@
-# track-record
-EOS SF Hackathon - Team "Track Record" prototype
+# Track Record
+
+EOS SF Hackathon prototype.
