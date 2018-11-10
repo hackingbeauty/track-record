@@ -1,6 +1,8 @@
 import React, { Component }   from 'react'
+import PropTypes              from 'prop-types'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter }         from 'react-router'
 import * as jobActionCreators from 'core/actions/actions-job'
 import { jobTypes }           from 'configs/config-main'
 import JobType                from './components/JobType'
@@ -8,8 +10,9 @@ import { styles }             from './styles.scss'
 
 class HomeView extends Component {
   proceed=(type) => {
-    const { actions } = this.props
+    const { actions, history } = this.props
     actions.job.addJob(type)
+    history.push('/upload')
   }
 
   displayJobs= () => {
@@ -41,5 +44,10 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
+HomeView.propTypes = {
+  actions: PropTypes.shape({}).isRequired,
+  history: PropTypes.shape({}).isRequired
+}
 
-export default connect(null, mapDispatchToProps)(HomeView)
+
+export default withRouter(connect(null, mapDispatchToProps)(HomeView))
