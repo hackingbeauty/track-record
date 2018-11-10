@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { dummyJobs }        from 'configs/config-main'
+import { jobTypes }         from 'configs/config-main'
 import JobType              from './components/JobType'
 import { styles }           from './styles.scss'
 
 class HomeView extends Component {
   displayJobs= () => {
-    return dummyJobs.map((job) => {
-      return <JobType {...job} />
+    return jobTypes.map((job, index) => {
+      const key = `job-${index}`
+      return <JobType key={key} {...job} />
     })
   }
 
@@ -14,7 +15,7 @@ class HomeView extends Component {
     return (
       <div className={styles}>
         <div className="container">
-          <h2>New Jobs</h2>
+          <h2>Create Your Immutable Track Record</h2>
           <ul>
             {this.displayJobs()}
           </ul>

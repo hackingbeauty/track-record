@@ -1,18 +1,24 @@
 import React      from 'react'
 import PropTypes  from 'prop-types'
+import Button     from 'components/Button'
 import { styles } from './styles.scss'
 
 const JobType = (props) => {
-  const { title } = props
+  const { type } = props
   return (
     <div className={styles}>
-      <span className="title">{title}</span>
+      <Button
+        color="primary"
+        className="btn"
+      >
+        {type}
+      </Button>
     </div>
   )
 }
 
 JobType.propTypes = {
-  title: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
 }
 
 export default JobType

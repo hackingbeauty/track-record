@@ -12,8 +12,8 @@ export const EOSConfig = {
   signatureProvider: ''
 }
 
-export const dummyJobs = [
-  { title: 'Create New Logo' },
-  { title: 'Job 2' },
-  { title: 'Job 3' }
+export const jobTypes = [
+  { type: 'Graphic Design' },
+  { type: 'User Experience' },
+  { type: 'User Interface' }
 ]
