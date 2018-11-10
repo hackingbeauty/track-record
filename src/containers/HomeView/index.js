@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
-import { jobTypes }         from 'configs/config-main'
-import JobType              from './components/JobType'
-import { styles }           from './styles.scss'
+import React, { Component }   from 'react'
+import { connect }            from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as jobActionCreators from 'core/actions/actions-job'
+import { jobTypes }           from 'configs/config-main'
+import JobType                from './components/JobType'
+import { styles }             from './styles.scss'
 
 class HomeView extends Component {
   proceed=(type) => {
-    
+    const { actions } = this.props
+    actions.job.addJob(type)
   }
 
   displayJobs= () => {
@@ -29,4 +33,13 @@ class HomeView extends Component {
   }
 }
 
-export default HomeView
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      job: bindActionCreators(jobActionCreators, dispatch)
+    }
+  }
+}
+
+
+export default connect(null, mapDispatchToProps)(HomeView)
