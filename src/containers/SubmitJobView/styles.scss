@@ -1,0 +1,22 @@
+:local(.styles) {
+  #accept-btn {
+    position: absolute;
+    bottom: 20px;
+    width: 95%;
+    left: 10px;
+  }
+
+  #enter-notes {
+    width: 100%;
+  }
+
+  .section {
+    margin-bottom: 20px;
+
+    .label,
+    .value {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}

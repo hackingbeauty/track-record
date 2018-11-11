@@ -12,14 +12,25 @@ import Slide                  from '@material-ui/core/Slide'
 import Toolbar                from '@material-ui/core/Toolbar'
 import IconButton             from '@material-ui/core/IconButton'
 import ArrowBackIcon          from '@material-ui/icons/ArrowBack'
-
+import TextField              from '@material-ui/core/TextField'
+import InputLabel             from '@material-ui/core/InputLabel'
+import MenuItem               from '@material-ui/core/MenuItem'
+import FormControl            from '@material-ui/core/FormControl'
+import Select                 from '@material-ui/core/Select'
 import { styles }             from './styles.scss'
 
 function TransitionComponent(props) {
   return <Slide direction="left" {...props} mountOnEnter unmountOnExit />
 }
 
-class AcceptedJobView extends Component {
+class SubmitJobView extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      open: false
+    }
+  }
   componentDidMount() {
     const { actions } = this.props
 
@@ -27,6 +38,18 @@ class AcceptedJobView extends Component {
       modalKey: 'accepted-job-modal'
     })
   }
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value })
+  };
+
+  handleClose = () => {
+    this.setState({ open: false })
+  };
+
+  handleOpen = () => {
+    this.setState({ open: true })
+  };
 
   close= () => {
     const { history } = this.props
@@ -39,6 +62,7 @@ class AcceptedJobView extends Component {
 
   render() {
     const { ui } = this.props
+    const { open, status } = this.state
 
     return (
       <StandardModal
@@ -65,14 +89,48 @@ class AcceptedJobView extends Component {
           </AppBar>
           <div className={styles}>
             <div className="container">
-              accepted job view here
-
+              <div id="job-status">
+                <div className="section">
+                  <div className="value">
+                    <FormControl >
+                      <InputLabel htmlFor="demo-controlled-open-select">Status</InputLabel>
+                      <Select
+                        fullWidth
+                        open={open}
+                        onClose={this.handleClose}
+                        onOpen={this.handleOpen}
+                        value={status}
+                        onChange={this.handleChange}
+                        inputProps={{
+                            name: 'age',
+                            id: 'demo-controlled-open-select'
+                          }}
+                      >
+                        <MenuItem value={10}>In Progress</MenuItem>
+                        <MenuItem value={20}>Waiting</MenuItem>
+                        <MenuItem value={30}>Finished</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                </div>
+                <div className="section">
+                  <div className="value">
+                    <TextField
+                      fullWidth
+                      id="enter-notes"
+                      label="Enter notes"
+                      margin="dense"
+                      variant="outlined"
+                    />
+                  </div>
+                </div>
+              </div>
               <Button
                 color="primary"
                 id="accept-btn"
                 onClick={this.submitJob}
               >
-                Submit Work
+                  Submit Work
               </Button>
             </div>
           </div>
@@ -96,11 +154,11 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-AcceptedJobView.propTypes = {
+SubmitJobView.propTypes = {
   actions: PropTypes.shape({}).isRequired,
   history: PropTypes.shape({}).isRequired,
   ui: PropTypes.shape({}).isRequired
 }
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AcceptedJobView))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SubmitJobView))

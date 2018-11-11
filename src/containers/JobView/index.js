@@ -34,7 +34,7 @@ class JobView extends Component {
 
   proceed=() => {
     const { history } = this.props
-    history.push('/accepted')
+    history.push('/submit')
   }
 
   render() {
