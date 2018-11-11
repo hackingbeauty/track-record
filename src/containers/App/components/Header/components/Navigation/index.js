@@ -4,7 +4,7 @@ import { withRouter }       from 'react-router-dom'
 import Paper                from '@material-ui/core/Paper'
 import { Tabs, Tab }        from '@material-ui/core'
 import ListIcon             from '@material-ui/icons/FormatListNumbered'
-import CheckIcon            from '@material-ui/icons/CloudUpload'
+import CheckIcon            from '@material-ui/icons/CheckCircleOutline'
 import { styles }           from './styles.scss'
 
 class Navigation extends Component {

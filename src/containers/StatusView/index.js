@@ -1,10 +1,24 @@
 import React, { Component } from 'react'
+import JobStatus            from './components/JobStatus'
 import { styles }           from './styles.scss'
 
 class StatusView extends Component {
+  displayJobStatuses = () => {
+    return (
+      <li>
+        <JobStatus status="Finished" jobTitle="Create Our New Logo" />
+        <JobStatus status="In Progress" jobTitle="Develop Our React Dapp" />
+      </li>
+    )
+  }
+
   render() {
     return (
-      <div className={styles}>this is the status view</div>
+      <div className={styles}>
+        <ul>
+          {this.displayJobStatuses()}
+        </ul>
+      </div>
     )
   }
 }

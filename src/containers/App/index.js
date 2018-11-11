@@ -6,14 +6,15 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
-import theme           from 'configs/theme/config-theme'
-import HomeView        from 'containers/HomeView'
-import StartView       from 'containers/StartView'
-import JobView         from 'containers/JobView'
-import SubmitJobView   from 'containers/SubmitJobView'
-import StatusView      from 'containers/StatusView'
-import Header          from './components/Header'
-import Footer          from './components/Footer'
+import theme              from 'configs/theme/config-theme'
+import HomeView           from 'containers/HomeView'
+import StartView          from 'containers/StartView'
+import JobView            from 'containers/JobView'
+import SubmitJobView      from 'containers/SubmitJobView'
+import StatusView         from 'containers/StatusView'
+import DetailsStatusView  from 'containers/DetailsStatusView'
+import Header             from './components/Header'
+import Footer             from './components/Footer'
 
 import './styles.scss' // global styles
 
@@ -32,6 +33,7 @@ class App extends Component {
                 <Route path="/job" component={JobView} />
                 <Route path="/submit" component={SubmitJobView} />
                 <Route path="/status" component={StatusView} />
+                <Route path="/status/:id" component={DetailsStatusView} />
                 <Redirect from="/" to="/start" />
               </Switch>
             </div>

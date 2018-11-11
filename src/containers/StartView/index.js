@@ -15,6 +15,7 @@ import Typography             from 'components/Typography'
 import { jobTypes }           from 'configs/config-main'
 import JobType                from './components/JobType'
 import { styles }             from './styles.scss'
+import Footer from '../App/components/Footer'
 
 function TransitionComponent(props) {
   return <Slide direction="left" {...props} mountOnEnter unmountOnExit />
@@ -81,6 +82,7 @@ class StartView extends Component {
               </ul>
             </div>
           </div>
+          <Footer />
         </div>
       </StandardModal>
     )
