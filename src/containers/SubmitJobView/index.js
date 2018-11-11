@@ -20,6 +20,7 @@ import Select                 from '@material-ui/core/Select'
 import Stepper                from '@material-ui/core/Stepper'
 import Step                   from '@material-ui/core/Step'
 import StepButton             from '@material-ui/core/StepButton'
+import { api }                from 'configs/config-main'
 import { styles }             from './styles.scss'
 
 function TransitionComponent(props) {
@@ -56,7 +57,6 @@ class SubmitJobView extends Component {
   }
 
   enterNotes = (evt) => {
-    console.log('====== ', evt.currentTarget.value)
     this.setState({ notes: evt.currentTarget.value })
   }
 
@@ -66,7 +66,27 @@ class SubmitJobView extends Component {
   }
 
   submitJob=() => {
-    alert('submit job')
+    // const { notes, status } = this.state
+    // const result = await api.transact({
+    //   actions: [{
+    //     account: 'eosio.token',
+    //     name: 'transfer',
+    //     authorization: [{
+    //       actor: 'useraaaaaaaa',
+    //       permission: 'active',
+    //     }],
+    //     data: {
+    //       from: 'useraaaaaaaa',
+    //       to: 'useraaaaaaab',
+    //       quantity: '0.0001 SYS',
+    //       memo: '',
+    //     },
+    //   }]
+    // }, {
+    //   blocksBehind: 3,
+    //   expireSeconds: 30,
+    // });
+    // console.dir(result);
   }
 
   render() {
@@ -139,9 +159,9 @@ class SubmitJobView extends Component {
                           id: 'demo-controlled-open-select'
                         }}
                       >
-                        <MenuItem value={10}>In Progress</MenuItem>
-                        <MenuItem value={20}>Waiting</MenuItem>
-                        <MenuItem value={30}>Finished</MenuItem>
+                        <MenuItem value="in-progress">In Progress</MenuItem>
+                        <MenuItem value="waiting">Waiting</MenuItem>
+                        <MenuItem value="finished">Finished</MenuItem>
                       </Select>
                     </FormControl>
                   </div>
