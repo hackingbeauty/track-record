@@ -1,4 +1,12 @@
-/* Main app configs go here */
+import { Api, JsonRpc, JsSignatureProvider } from 'eosjs'
+
+/** ****** Start EOSJS Configuration ******* */
+const defaultPrivateKey = '5K7mtrinTFrVTduSxizUc5hjXJEtTjVTsqSHeBHes1Viep86FP5'
+const signatureProvider = new JsSignatureProvider([defaultPrivateKey])
+const rpc = new JsonRpc('http://127.0.0.1:8888')
+/** ****** End EOSJS Configuration ******* */
+
+export const api = new Api({ rpc, signatureProvider })
 
 export const appConfig = {
   name: 'Track Record',
