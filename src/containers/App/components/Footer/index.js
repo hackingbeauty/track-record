@@ -7,7 +7,9 @@ class Footer extends Component {
     return (
       <div className={styles}>
         <BottomNavigation>
-          <div className="container" />
+          <div className="container">
+            Active Account: jennifer1234
+          </div>
         </BottomNavigation>
       </div>
     )
