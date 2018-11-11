@@ -5,13 +5,17 @@ import { bindActionCreators } from 'redux'
 import { withRouter }         from 'react-router'
 import * as uiActionCreators  from 'core/actions/actions-ui'
 import AppBar                 from 'components/AppBar'
-import { StandardModal }      from 'components/Modals'
+import {
+  StandardModal,
+  ConfirmationModal
+} from 'components/Modals'
 import Typography             from 'components/Typography'
 import Button                 from 'components/Button'
 import Slide                  from '@material-ui/core/Slide'
 import Toolbar                from '@material-ui/core/Toolbar'
 import IconButton             from '@material-ui/core/IconButton'
 import ArrowBackIcon          from '@material-ui/icons/ArrowBack'
+import SmileyIcon             from '@material-ui/icons/InsertEmoticon'
 import TextField              from '@material-ui/core/TextField'
 import InputLabel             from '@material-ui/core/InputLabel'
 import MenuItem               from '@material-ui/core/MenuItem'
@@ -66,7 +70,7 @@ class SubmitJobView extends Component {
   }
 
   submitJob=() => {
-    const { history } = this.props
+    const { actions } = this.props
     const { notes } = this.state
     const userName = 'jennifer1234'
 
@@ -86,115 +90,132 @@ class SubmitJobView extends Component {
     }, {
       blocksBehind: 3,
       expireSeconds: 30
-    }).then((result) => {
-      history.push('/status')
-    }).catch((error) => {
-      console.log('------ eos error -----', error)
+    }).then(() => {
+      actions.ui.openConfirmModal({
+        modalKey: 'confirmation-modal'
+      })
+    }).catch(() => {
+      // console.log('------ eos error -----', error)
     })
   }
 
   render() {
-    const { ui } = this.props
+    const { ui, history } = this.props
     const { open, status, notes } = this.state
 
     return (
-      <StandardModal
-        modalKey="accepted-job-modal"
-        modalState={ui.modalState}
-        onClose={this.close}
-        TransitionComponent={TransitionComponent}
-      >
-        <div>
-          <AppBar>
-            <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="back-arrow"
-                onClick={this.close}
-                className="arrow-icon"
-              >
-                <ArrowBackIcon />
-              </IconButton>
-              <Typography variant="title" color="inherit">
-                Submit Your Work
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          <div className={styles}>
-            <Stepper nonLinear>
-              <Step key="step-1">
-                <StepButton
-                  completed
+      <div className={styles}>
+        <StandardModal
+          modalKey="accepted-job-modal"
+          modalState={ui.modalState}
+          onClose={this.close}
+          TransitionComponent={TransitionComponent}
+        >
+          <div>
+            <AppBar>
+              <Toolbar>
+                <IconButton
+                  color="inherit"
+                  aria-label="back-arrow"
+                  onClick={this.close}
+                  className="arrow-icon"
                 >
-                  Accept
-                </StepButton>
-              </Step>
+                  <ArrowBackIcon />
+                </IconButton>
+                <Typography variant="title" color="inherit">
+                  Submit Your Work
+                </Typography>
+              </Toolbar>
+            </AppBar>
+            <div className={styles}>
+              <Stepper nonLinear>
+                <Step key="step-1">
+                  <StepButton
+                    completed
+                  >
+                    Accept
+                  </StepButton>
+                </Step>
 
-              <Step key="step-2">
-                <StepButton
-                  completed={false}
-                >
-                  Submit
-                </StepButton>
-              </Step>
+                <Step key="step-2">
+                  <StepButton
+                    completed={false}
+                  >
+                    Submit
+                  </StepButton>
+                </Step>
 
-              <Step key="step-2">
-                <StepButton
-                  completed={false}
-                >
-                  Get Paid!
-                </StepButton>
-              </Step>
-            </Stepper>
-            <div className="container">
-              <div id="job-status">
-                <div className="section">
-                  <div className="value">
-                    <FormControl id="form">
-                      <InputLabel htmlFor="demo-controlled-open-select">Status</InputLabel>
-                      <Select
-                        open={open}
-                        onClose={this.handleClose}
-                        onOpen={this.handleOpen}
-                        value={status}
-                        onChange={this.handleChange}
-                        inputProps={{
-                          name: 'status',
-                          id: 'demo-controlled-open-select'
-                        }}
-                      >
-                        <MenuItem value="in-progress">In Progress</MenuItem>
-                        <MenuItem value="waiting">Waiting</MenuItem>
-                        <MenuItem value="finished">Finished</MenuItem>
-                      </Select>
-                    </FormControl>
+                <Step key="step-2">
+                  <StepButton
+                    completed={false}
+                  >
+                    Get Paid!
+                  </StepButton>
+                </Step>
+              </Stepper>
+              <div className="container">
+                <div id="job-status">
+                  <div className="section">
+                    <div className="value">
+                      <FormControl id="form">
+                        <InputLabel htmlFor="demo-controlled-open-select">Status</InputLabel>
+                        <Select
+                          open={open}
+                          onClose={this.handleClose}
+                          onOpen={this.handleOpen}
+                          value={status}
+                          onChange={this.handleChange}
+                          inputProps={{
+                            name: 'status',
+                            id: 'demo-controlled-open-select'
+                          }}
+                        >
+                          <MenuItem value="in-progress">In Progress</MenuItem>
+                          <MenuItem value="waiting">Waiting</MenuItem>
+                          <MenuItem value="finished">Finished</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  </div>
+                  <div className="section">
+                    <div className="value">
+                      <TextField
+                        fullWidth
+                        id="enter-notes"
+                        label="Enter notes"
+                        margin="dense"
+                        variant="outlined"
+                        onChange={this.enterNotes}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="section">
-                  <div className="value">
-                    <TextField
-                      fullWidth
-                      id="enter-notes"
-                      label="Enter notes"
-                      margin="dense"
-                      variant="outlined"
-                      onChange={this.enterNotes}
-                    />
-                  </div>
-                </div>
+                <div id="notes">{notes}</div>
+                <Button
+                  color="primary"
+                  id="accept-btn"
+                  onClick={this.submitJob}
+                >
+                    Submit Work
+                </Button>
               </div>
-              <div id="notes">{notes}</div>
-              <Button
-                color="primary"
-                id="accept-btn"
-                onClick={this.submitJob}
-              >
-                  Submit Work
-              </Button>
             </div>
           </div>
-        </div>
-      </StandardModal>
+        </StandardModal>
+        <ConfirmationModal
+          modalKey="confirmation-modal"
+          confirmModalState={ui.confirmModalState}
+          okCallback={() => {
+            history.push('/status')
+          }}
+        >
+          <div className={styles}>
+            <SmileyIcon id="smiley-icon" />
+
+            <span id="confirmation-msg">Great work! You submitted something.</span>
+          </div>
+        </ConfirmationModal>
+      </div>
     )
   }
 }
