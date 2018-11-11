@@ -6,7 +6,7 @@ class HomeView extends Component {
     return (
       <div className={styles}>
         <div className="container">
-          This is the home Home HomeView
+          List of new jobs goes here
         </div>
       </div>
     )
