@@ -62,12 +62,12 @@ CONTRACT reward : public eosio::contract {
       uint16_t      target_period;  //10 tokens
       uint16_t      grace_period;   //8 tokens
       // primary key
-      auto primary_key() const { return user.value; }
+      auto primary_key() const { return job_num.value; }
     };
 
     // create a multi-index table and support secondary key
     typedef eosio::multi_index< name("rewardstruct"), rewardstruct,
-      indexed_by< name("getbyuser"), const_mem_fun<rewardstruct, uint64_t, &rewardstruct::get_by_user> >
+      indexed_by< name("getbyjobnum"), const_mem_fun<rewardstruct, uint64_t, &rewardstruct::get_by_user> >
       > reward_table;
 
     reward_table _rewards;
