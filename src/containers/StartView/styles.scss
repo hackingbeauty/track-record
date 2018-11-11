@@ -1,0 +1,19 @@
+:local(.styles) {
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    text-align: center;
+    margin-top: 10px;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
