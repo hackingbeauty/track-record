@@ -68,7 +68,7 @@ $ npm run start <enter>
 
 ## Team
 
-* **Jun Dam** - [LinkedIN](https://www.linkedin.com/in/jun-dam-0334161/)
+* **Jun Dam** - [LinkedIn](https://www.linkedin.com/in/jun-dam-0334161/)
 * **Jenny Cai** - [LinkedIn](https://www.linkedin.com/in/caijenny/)
 * **Mark Muskardin** - [LinkedIn](https://www.linkedin.com/in/markmuskardin/)
 * **Shamod Lacoul** - [LinkedIn](https://www.linkedin.com/in/shamod/)
