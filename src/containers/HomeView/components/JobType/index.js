@@ -10,7 +10,7 @@ class JobType extends Component {
   }
 
   render() {
-    const { type } = this.props.job
+    const { category } = this.props.job
 
     return (
       <div className={styles}>
@@ -19,7 +19,7 @@ class JobType extends Component {
           className="btn"
           onClick={this.selectJobType}
         >
-          {type}
+          {category}
         </Button>
       </div>
     )
@@ -29,7 +29,7 @@ class JobType extends Component {
 JobType.propTypes = {
   onClick: PropTypes.func.isRequired,
   job: PropTypes.shape({
-    type: PropTypes.string.isRequired
+    category: PropTypes.string.isRequired
   }).isRequired
 }
 

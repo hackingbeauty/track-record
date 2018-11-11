@@ -26,7 +26,8 @@ class HomeView extends Component {
     return (
       <div className={styles}>
         <div className="container">
-          <h2>Create Your Immutable Track Record</h2>
+          <h2>Start Creating Your Immutable Job Reputation!</h2>
+          <h3>Select a job type:</h3>
           <ul>
             {this.displayJobs()}
           </ul>
