@@ -34,6 +34,36 @@ The logic behind these bonus calculations will also be automated in another smar
 
 So there you go.  One you start using Track Record you’ll never have to find a job again…because the jobs will come looking for you.
 
+
+# Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+## Prerequisites
+
+This example DApp was developed on and for MacOS.  
+
+Docker is required, the url to procure: 
+
+```
+https://store.docker.com/editions/community/docker-ce-desktop-mac
+```
+
+
+## Installing
+
+In order to start the application, change directory into and start your EOS Node. Please visit the following url for a detailed explaintion:
+
+```
+https://developers.eos.io/eosio-home/docs/getting-the-software
+```
+
+To start the frontend:
+
+```
+$ npm run start <enter>
+```
+
 ## Team
 
 * **Jun Dam** - [LinkedIN](https://www.linkedin.com/in/jun-dam-0334161/)
