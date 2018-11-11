@@ -15,11 +15,6 @@ export const appConfig = {
   splashScreenBackground: '#ffffff'
 }
 
-export const EOSConfig = {
-  defaultPrivateKey: 'asdfasdfasfasdfasdf',
-  signatureProvider: ''
-}
-
 export const jobTypes = [
   {
     category: 'Graphic Design',
