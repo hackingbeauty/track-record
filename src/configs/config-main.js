@@ -17,9 +17,9 @@ export const appConfig = {
 
 export const jobTypes = [
   {
-    category: 'Graphic Design',
-    title: 'Create our new logo',
-    description: "A tree needs to be your friend if you're going to paint him. Go out on a limb - that's where the fruit is. We'll put a happy little bush here. Isn't it fantastic that you can change your mind and create all these happy things? You better get your coat out, this is going to be a cold painting.",
+    category: 'Machine Learning',
+    title: 'Create our machine learning model',
+    description: "Here's our training dataset and test dataset. Please create a ML model. We have reserved test dataset to evaluate your result.",
     compensation: '$100',
     time: '1 week',
     kpi: '80%'
