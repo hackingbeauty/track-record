@@ -78,6 +78,6 @@ $ npm run start <enter>
 * **Jenny Cai** - [LinkedIn](https://www.linkedin.com/in/caijenny/)
 * **Mark Muskardin** - [LinkedIn](https://www.linkedin.com/in/markmuskardin/)
 * **Shamod Lacoul** - [LinkedIn](https://www.linkedin.com/in/shamod/)
-* **Jeff Flowers** - [LinkedIn](https://www.linkedin.com/in/flowersjeff)
+* **Jeff Flowers** - [LinkedIn](https://www.linkedin.com/in/flowersjeff/)
 
 See also the list of [contributors](https://github.com/hackingbeauty/track-record/graphs/contributors) who participated in this project.
