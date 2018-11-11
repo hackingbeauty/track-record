@@ -1,5 +1,6 @@
 :local(.styles) {
   height: 100vh;
+  font-size: 18px;
 
   h2 {
     margin-bottom: 20px;
@@ -7,18 +8,12 @@
   }
 
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     .label {
-      font-size: 18px;
       display: inline-block;
-      margin-bottom: 5px;
     }
 
-    .value {
-      max-height: 110px;
-      overflow: hidden;
-    }
   }
 
   #job-info{
@@ -27,5 +22,6 @@
 
   #accept-btn {
     width: 100%;
+    margin-top: 50px;
   }
 }

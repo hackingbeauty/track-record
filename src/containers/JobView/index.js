@@ -20,11 +20,11 @@ class JobView extends Component {
             </div>
             <div className="section">
               <span className="label">Compensation:</span>
-              <div className="valule">{jobType.compensation}</div>
+              <div className="value right">{jobType.compensation}</div>
             </div>
             <div className="section">
               <span className="label">Time:</span>
-              <div className="value">{jobType.time}</div>
+              <div className="value right">{jobType.time}</div>
             </div>
           </div>
           <Button
