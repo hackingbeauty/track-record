@@ -1,5 +1,16 @@
 :local(.styles) {
+  height: 100vh;
+
   h2 {
     margin-bottom: 20px;
+  }
+
+  ul {
+    text-align: center;
+    margin-top: 10px;
+
+    .btn {
+      width: 100%;
+    }
   }
 }
