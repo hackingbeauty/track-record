@@ -10,8 +10,10 @@
   .section {
     margin-bottom: 20px;
 
-    .label {
+    .label,
+    .value {
       display: inline-block;
+      margin-bottom: 10px;
     }
 
   }
