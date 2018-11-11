@@ -28,6 +28,7 @@ class SubmitJobView extends Component {
     super(props)
 
     this.state = {
+      status: '',
       open: false
     }
   }
@@ -92,19 +93,18 @@ class SubmitJobView extends Component {
               <div id="job-status">
                 <div className="section">
                   <div className="value">
-                    <FormControl >
+                    <FormControl id="form">
                       <InputLabel htmlFor="demo-controlled-open-select">Status</InputLabel>
                       <Select
-                        fullWidth
                         open={open}
                         onClose={this.handleClose}
                         onOpen={this.handleOpen}
                         value={status}
                         onChange={this.handleChange}
                         inputProps={{
-                            name: 'age',
-                            id: 'demo-controlled-open-select'
-                          }}
+                          name: 'status',
+                          id: 'demo-controlled-open-select'
+                        }}
                       >
                         <MenuItem value={10}>In Progress</MenuItem>
                         <MenuItem value={20}>Waiting</MenuItem>
