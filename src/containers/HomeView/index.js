@@ -9,16 +9,16 @@ import JobType                from './components/JobType'
 import { styles }             from './styles.scss'
 
 class HomeView extends Component {
-  proceed=(type) => {
+  proceed=(job) => {
     const { actions, history } = this.props
-    actions.job.addJob(type)
+    actions.job.addJob(job)
     history.push('/job')
   }
 
   displayJobs= () => {
     return jobTypes.map((job, index) => {
       const key = `job-${index}`
-      return <JobType key={key} {...job} onClick={this.proceed} />
+      return <JobType key={key} job={job} onClick={this.proceed} />
     })
   }
 

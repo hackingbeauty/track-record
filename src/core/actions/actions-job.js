@@ -1,8 +1,8 @@
 import constants from 'core/types'
 
-export function addJob(type) {
+export function addJob(job) {
   return {
     type: constants.ADD_JOB,
-    jobType: type
+    job
   }
 }

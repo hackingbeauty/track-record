@@ -4,19 +4,20 @@ import Button               from 'components/Button'
 import { styles }           from './styles.scss'
 
 class JobType extends Component {
-  selectItem= () => {
-    const { type, onClick } = this.props
-    onClick(type)
+  selectJobType= () => {
+    const { job, onClick } = this.props
+    onClick(job)
   }
 
   render() {
-    const { type } = this.props
+    const { type } = this.props.job
+
     return (
       <div className={styles}>
         <Button
           color="primary"
           className="btn"
-          onClick={this.selectItem}
+          onClick={this.selectJobType}
         >
           {type}
         </Button>
@@ -27,7 +28,9 @@ class JobType extends Component {
 
 JobType.propTypes = {
   onClick: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired
+  job: PropTypes.shape({
+    type: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default JobType
