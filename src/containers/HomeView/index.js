@@ -12,7 +12,7 @@ class HomeView extends Component {
   proceed=(type) => {
     const { actions, history } = this.props
     actions.job.addJob(type)
-    history.push('/upload')
+    history.push('/job')
   }
 
   displayJobs= () => {
