@@ -66,6 +66,7 @@ class SubmitJobView extends Component {
   }
 
   submitJob=() => {
+    const { history } = this.props
     const { notes } = this.state
     const userName = 'jennifer1234'
 
@@ -85,8 +86,8 @@ class SubmitJobView extends Component {
     }, {
       blocksBehind: 3,
       expireSeconds: 30
-    }).then(() => {
-      alert('success!')
+    }).then((result) => {
+      history.push('/status')
     }).catch((error) => {
       console.log('------ eos error -----', error)
     })
