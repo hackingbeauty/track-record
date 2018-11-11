@@ -17,6 +17,9 @@ import InputLabel             from '@material-ui/core/InputLabel'
 import MenuItem               from '@material-ui/core/MenuItem'
 import FormControl            from '@material-ui/core/FormControl'
 import Select                 from '@material-ui/core/Select'
+import Stepper                from '@material-ui/core/Stepper'
+import Step                   from '@material-ui/core/Step'
+import StepButton             from '@material-ui/core/StepButton'
 import { styles }             from './styles.scss'
 
 function TransitionComponent(props) {
@@ -94,6 +97,31 @@ class SubmitJobView extends Component {
             </Toolbar>
           </AppBar>
           <div className={styles}>
+            <Stepper nonLinear>
+              <Step key="step-1">
+                <StepButton
+                  completed
+                >
+                  Accept
+                </StepButton>
+              </Step>
+
+              <Step key="step-2">
+                <StepButton
+                  completed={false}
+                >
+                  Submit
+                </StepButton>
+              </Step>
+
+              <Step key="step-2">
+                <StepButton
+                  completed={false}
+                >
+                  Get Paid!
+                </StepButton>
+              </Step>
+            </Stepper>
             <div className="container">
               <div id="job-status">
                 <div className="section">
