@@ -51,6 +51,11 @@ Docker is required, the url to procure:
 https://store.docker.com/editions/community/docker-ce-desktop-mac
 ```
 
+NodeJS is needed, the url for this software: 
+
+```
+https://nodejs.org/en/download/
+```
 
 ## Installing
 
@@ -60,9 +65,10 @@ In order to start the application, change directory into and start your EOS Node
 https://developers.eos.io/eosio-home/docs/getting-the-software
 ```
 
-To start the frontend:
+To start the frontend: (Once in the application's directory)
 
 ```
+$ yarn <enter>
 $ npm run start <enter>
 ```
 
