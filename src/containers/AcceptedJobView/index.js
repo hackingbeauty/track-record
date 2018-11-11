@@ -3,7 +3,6 @@ import PropTypes              from 'prop-types'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter }         from 'react-router'
-import * as jobActionCreators from 'core/actions/actions-job'
 import * as uiActionCreators  from 'core/actions/actions-ui'
 import AppBar                 from 'components/AppBar'
 import { StandardModal }      from 'components/Modals'
@@ -78,7 +77,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      job: bindActionCreators(jobActionCreators, dispatch),
       ui: bindActionCreators(uiActionCreators, dispatch)
     }
   }

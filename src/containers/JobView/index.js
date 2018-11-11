@@ -1,20 +1,18 @@
-import React, { Component } from 'react'
-import PropTypes            from 'prop-types'
-import { connect }          from 'react-redux'
+import React, { Component }   from 'react'
+import PropTypes              from 'prop-types'
+import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
-
-import { withRouter }       from 'react-router'
-import Button               from 'components/Button'
-import * as uiActionCreators from 'core/actions/actions-ui'
-
-import { StandardModal }    from 'components/Modals'
-import AppBar               from 'components/AppBar'
-import Slide                from '@material-ui/core/Slide'
-import Toolbar              from '@material-ui/core/Toolbar'
-import IconButton           from '@material-ui/core/IconButton'
-import ArrowBackIcon        from '@material-ui/icons/ArrowBack'
-import Typography           from 'components/Typography'
-import { styles }           from './styles.scss'
+import { withRouter }         from 'react-router'
+import Button                 from 'components/Button'
+import * as uiActionCreators  from 'core/actions/actions-ui'
+import { StandardModal }      from 'components/Modals'
+import AppBar                 from 'components/AppBar'
+import Slide                  from '@material-ui/core/Slide'
+import Toolbar                from '@material-ui/core/Toolbar'
+import IconButton             from '@material-ui/core/IconButton'
+import ArrowBackIcon          from '@material-ui/icons/ArrowBack'
+import Typography             from 'components/Typography'
+import { styles }             from './styles.scss'
 
 function TransitionComponent(props) {
   return <Slide direction="left" {...props} mountOnEnter unmountOnExit />
@@ -32,6 +30,11 @@ class JobView extends Component {
   close= () => {
     const { history } = this.props
     history.push('/start')
+  }
+
+  proceed=() => {
+    const { history } = this.props
+    history.push('/accepted')
   }
 
   render() {
@@ -81,6 +84,7 @@ class JobView extends Component {
               <Button
                 color="primary"
                 id="accept-btn"
+                onClick={this.proceed}
               >
                 Accept Job
               </Button>
