@@ -66,27 +66,30 @@ class SubmitJobView extends Component {
   }
 
   submitJob=() => {
-    // const { notes, status } = this.state
-    // const result = await api.transact({
-    //   actions: [{
-    //     account: 'eosio.token',
-    //     name: 'transfer',
-    //     authorization: [{
-    //       actor: 'useraaaaaaaa',
-    //       permission: 'active',
-    //     }],
-    //     data: {
-    //       from: 'useraaaaaaaa',
-    //       to: 'useraaaaaaab',
-    //       quantity: '0.0001 SYS',
-    //       memo: '',
-    //     },
-    //   }]
-    // }, {
-    //   blocksBehind: 3,
-    //   expireSeconds: 30,
-    // });
-    // console.dir(result);
+    const { notes } = this.state
+    const userName = 'jennifer1234'
+
+    api.transact({
+      actions: [{
+        account: 'contribacc',
+        name: 'update',
+        authorization: [{
+          actor: userName,
+          permission: 'active'
+        }],
+        data: {
+          user: userName,
+          note: notes
+        }
+      }]
+    }, {
+      blocksBehind: 3,
+      expireSeconds: 30
+    }).then(() => {
+      alert('success!')
+    }).catch((error) => {
+      console.log('------ eos error -----', error)
+    })
   }
 
   render() {
