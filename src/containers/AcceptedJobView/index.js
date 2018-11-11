@@ -6,11 +6,13 @@ import { withRouter }         from 'react-router'
 import * as uiActionCreators  from 'core/actions/actions-ui'
 import AppBar                 from 'components/AppBar'
 import { StandardModal }      from 'components/Modals'
+import Typography             from 'components/Typography'
+import Button                 from 'components/Button'
 import Slide                  from '@material-ui/core/Slide'
 import Toolbar                from '@material-ui/core/Toolbar'
 import IconButton             from '@material-ui/core/IconButton'
 import ArrowBackIcon          from '@material-ui/icons/ArrowBack'
-import Typography             from 'components/Typography'
+
 import { styles }             from './styles.scss'
 
 function TransitionComponent(props) {
@@ -29,6 +31,10 @@ class AcceptedJobView extends Component {
   close= () => {
     const { history } = this.props
     history.push('/job')
+  }
+
+  submitJob=() => {
+    alert('submit job')
   }
 
   render() {
@@ -53,13 +59,21 @@ class AcceptedJobView extends Component {
                 <ArrowBackIcon />
               </IconButton>
               <Typography variant="title" color="inherit">
-                Update Job Status
+                Submit Your Work
               </Typography>
             </Toolbar>
           </AppBar>
           <div className={styles}>
             <div className="container">
               accepted job view here
+
+              <Button
+                color="primary"
+                id="accept-btn"
+                onClick={this.submitJob}
+              >
+                Submit Work
+              </Button>
             </div>
           </div>
         </div>
