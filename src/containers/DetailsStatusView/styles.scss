@@ -1,3 +1,38 @@
 :local(.styles) {
+  #status-details {
+    margin-top: 40px;
+  }
+
+  #badge {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin:0 auto;
+
+    h2 {
+      position: absolute;
+      top: 80px;
+      left: 46px;
+      color: $white;
+    }
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 20px;
+    width: 95%;
+    left: 10px;
+  }
+
+  .section {
+    margin-bottom: 20px;
+
+    .label,
+    .value {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+  }
 
 }
