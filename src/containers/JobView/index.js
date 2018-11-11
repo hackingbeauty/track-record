@@ -12,6 +12,12 @@ class JobView extends Component {
       <div className={styles}>
         <div className="container">
           <h2>{jobType.title}</h2>
+          <span>Description:</span>
+          <div>{jobType.description}</div>
+          <span>Compensation:</span>
+          <div>{jobType.compensation}</div>
+          <span>Time</span>
+          <div>{jobType.time}</div>
         </div>
       </div>
     )
