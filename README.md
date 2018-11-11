@@ -9,7 +9,7 @@ You send out hundreds of resumes, do dozens of interviews and after months of se
 
 But what if I told you about a platform that will make getting a job soo much easier.
 
-Let’s take Isabella the graphic designer from Italy for example.  
+Let’s take Jennifer the graphic designer from Italy for example.  
 
 All she needs to do is enter her expertise so she can start building her immutable track record.  
 
@@ -24,12 +24,9 @@ These terms will all be recorded on the blockchain.
 
 Then she clicks a button and that’s it!  No interviews.. resumes.. contracts … she can just get started!  Isn’t that great?
 
-Next Isabella will start entering all her activities on the EOS blockchain… let’s say she uploads an initial draft of the website and then another revision after some feedback.   Step by step each work activity and the communications around it are recorded & timestamped on the blockchain.  Because of this radical transparency, algorithms can match her track record with future jobs. 
+Next Jennifer will start entering all her activities on the EOS blockchain… let’s say she uploads an initial draft of the website and then another revision after some feedback.   Step by step each work activity and the communications around it are recorded & timestamped on the blockchain.  Because of this radical transparency, algorithms can match her track record with future jobs. 
 
-Finally when Sally’s complete, 
-
-She gets paid instantly.
-In this example she gets paid in EURO stablecoins that were converted from US dollar stablecoins.  She can be paid anywhere in the world in any currency because of the automated conversions using a smart contract.  Isn’t that convenient?
+Finally when Jennifer has completed the task - she gets paid instantly.  In our example she gets paid in EURO stablecoins that were converted from US dollar stablecoins.  She can be paid anywhere in the world in any currency because of the automated conversions using a smart contract.  Isn’t that convenient?
 
 Since Jennifer finished early she gets a time bonus.  She also exceeds her Key Performance Indictators (KPIs) and earns a performance bonus as well. 
 
