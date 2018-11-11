@@ -54,7 +54,7 @@ https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 ## Installing
 
-In order to start the application, change directory into and start your EOS Node. Please visit the following url for a detailed explaintion:
+In order to start the application, change directory into and start your EOS Node. Please visit the following url for a detailed explanation:
 
 ```
 https://developers.eos.io/eosio-home/docs/getting-the-software
