@@ -6,7 +6,7 @@ class StatusView extends Component {
   displayJobStatuses = () => {
     return (
       <li>
-        <JobStatus status="Finished" jobTitle="Create Our New Logo" />
+        <JobStatus status="Finished" jobTitle="Create Our Machine Learning Model" />
         <JobStatus status="In Progress" jobTitle="Develop Our React Dapp" />
       </li>
     )

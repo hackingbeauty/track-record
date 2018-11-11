@@ -75,6 +75,10 @@ class DetailsStatusView extends Component {
                   <span className="label">Project Time:</span>
                   <div className="value right">1 week</div>
                 </div>
+                <div className="section">
+                  <span className="label">Tokens:</span>
+                  <div className="value right">20</div>
+                </div>
               </div>
               <Button
                 className="btn"
