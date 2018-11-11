@@ -32,8 +32,8 @@ class App extends Component {
                 <Route path="/home" component={HomeView} />
                 <Route path="/job" component={JobView} />
                 <Route path="/submit" component={SubmitJobView} />
-                <Route path="/status" component={StatusView} />
                 <Route path="/status/:id" component={DetailsStatusView} />
+                <Route path="/status" component={StatusView} />
                 <Redirect from="/" to="/start" />
               </Switch>
             </div>
