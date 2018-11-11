@@ -42,15 +42,20 @@ class SubmitJobView extends Component {
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value })
-  };
+  }
 
   handleClose = () => {
     this.setState({ open: false })
-  };
+  }
 
   handleOpen = () => {
     this.setState({ open: true })
-  };
+  }
+
+  enterNotes = (evt) => {
+    console.log('====== ', evt.currentTarget.value)
+    this.setState({ notes: evt.currentTarget.value })
+  }
 
   close= () => {
     const { history } = this.props
@@ -63,7 +68,7 @@ class SubmitJobView extends Component {
 
   render() {
     const { ui } = this.props
-    const { open, status } = this.state
+    const { open, status, notes } = this.state
 
     return (
       <StandardModal
@@ -121,10 +126,12 @@ class SubmitJobView extends Component {
                       label="Enter notes"
                       margin="dense"
                       variant="outlined"
+                      onChange={this.enterNotes}
                     />
                   </div>
                 </div>
               </div>
+              <div id="notes">{notes}</div>
               <Button
                 color="primary"
                 id="accept-btn"
