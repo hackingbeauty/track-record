@@ -2,6 +2,8 @@
 
 Building track records towards new opportunites. An EOS Proto DApp begun at the San Francisco EOSHackathon.
 
+*Once you start using Track Record, you'll never need to look for jobs again - the jobs will come looking for you!*
+
 ## Motivation
 Have you ever struggled to find a good job?   
 
