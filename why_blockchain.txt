@@ -1,0 +1,16 @@
+Three reasons of using blockchain
+1. proof of ownership. suppose a worker designed a customized logo, the logo is uploaded into blockchain with a time stamp of Dec 8, 2018. since it's immutable, it's a proof to an emplyer that she's the person who designed the logo at this specific date, more reliable than the display of this logo on a personal website whose owner claims to have designed this logo on certain date since a personal site can be modified any time.
+
+2.  maintain anonymity. On fiverr.com, a worker typically uploads his/her picture. On blockchain, one doesn't need to do so. Each worker just uses a public key. It has two advantages: a) suppose a worker always has good designs. Super! Which employer doesn't like consistent high quality work!  b) suppose a new person lacks experience, his/her initial 10 designs are OK. After gaining more experience, he/she could get a new public key, start from scratch and show a steady stream of WOW designs.
+
+3. the feasibility of small transactions. Say a company wants to hire a senior designer who could coach junior designers, it could posts a design, asks for feedback for a small payment of $10. a designer may take less than 10-minute to look at it and write a feedback. The company gathers a lot of feedbacks from different applicants and can choose an applicant with a good taste in designing.   This also accomodates developing countries. Say, in a country where labor cost is $1 per hour, a worker does data entry work for 30 minutes and gets paid. With smart contracts to automate payments, almost any small amount is ok.
+
+Feedback 1:
+
+nstead of proof of ownership.. it's proof of 'actual work' I would focus on.  The track record of an immutable living breathing resume.  Hence what you did, what you got paid, bonuses, and that you were validated by some company that gave you the job.
+
+Feedback 2:
+
+Could the system be gamed to sell profiles from one user to another ?
+
+Perhaps biometric would address some of the concerns. System probably needs to give the user the control for which information to share to others if you are going to go the route of what what was mentioned in feedback 1.
